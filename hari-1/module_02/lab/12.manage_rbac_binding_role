@@ -1,0 +1,11 @@
+- create clusterrolebinding
+kubectl create clusterrolebinding client-dev-rolebinding --clusterrole=client-dev --user=client --namespace dev
+
+- cek clusterrolebinding
+kubectl get clusterrolebinding
+
+- edit clusterrolebinding
+kubectl edit clusterrolebinding client-dev-clusterrolebinding
+
+- verifikasi
+kubectl --kubeconfig client.conf get pods

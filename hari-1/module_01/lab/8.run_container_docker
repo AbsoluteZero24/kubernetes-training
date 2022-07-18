@@ -1,0 +1,6 @@
+- pull image
+docker pull nginx
+
+- run container
+docker run -d -p 80:80 --name web_server nginx
+docker ps

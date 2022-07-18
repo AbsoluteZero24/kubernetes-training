@@ -1,0 +1,2 @@
+- run container
+ctr run docker.io/library/nginx:latest web_server

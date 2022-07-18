@@ -1,0 +1,17 @@
+-  create direktori
+mkdir web-images
+
+- create file
+mkdir apps
+echo "<p>Ini adalah paragraf pertama</p>" > apps/index.html
+echo “test ok” > apps/check.html
+
+- create Dockerfile
+vim Dockerfile
+#...
+FROM nginx
+ADD ./apps/ /usr/share/nginx/html
+CMD ["nginx", "-g", "daemon off;"]
+#...
+
+docker build -t web-image .

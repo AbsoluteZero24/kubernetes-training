@@ -1,0 +1,42 @@
+#...step 1 install containerd
+
+- installing binaries
+wget https://github.com/containerd/containerd/releases/download/v1.6.1/containerd-1.6.1-linux-amd64.tar.gz
+tar xvf containerd-1.6.1-linux-amd64.tar.gz
+cd bin/
+mv -v * /usr/local/bin/
+
+- create systemd service containerd
+cd /usr/lib/systemd/system
+vim containerd.service
+#...
+[Unit]
+Description=containerd container runtime
+Documentation=https://containerd.io
+After=network.target local-fs.target
+
+[Service]
+ExecStartPre=-/sbin/modprobe overlay
+ExecStart=/usr/local/bin/containerd
+
+Type=notify
+Delegate=yes
+KillMode=process
+Restart=always
+RestartSec=5
+
+LimitNPROC=infinity
+LimitCORE=infinity
+LimitNOFILE=infinity
+
+TasksMax=infinity
+OOMScoreAdjust=-999
+
+[Install]
+WantedBy=multi-user.target
+#...
+
+- restart service
+systemctl daemon-reload
+systemctl enable --now containerd
+systemctl status containerd

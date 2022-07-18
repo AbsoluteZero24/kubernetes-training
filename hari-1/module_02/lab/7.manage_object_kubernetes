@@ -1,0 +1,5 @@
+- list all command
+kubectl --help
+
+- cek API Resource Kubernetes
+kubectl api-resources

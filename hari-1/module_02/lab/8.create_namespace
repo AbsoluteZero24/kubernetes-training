@@ -1,0 +1,12 @@
+- list all namespace
+kubectl get ns
+
+- create namespace dev
+kubectl create ns dev
+
+- create namespace prod
+kubectl create ns prod
+
+- cek api resources namespace
+kubectl api-resources --namespaced=true
+kubectl api-resources --namespaced=false

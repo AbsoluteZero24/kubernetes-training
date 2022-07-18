@@ -1,0 +1,5 @@
+- push dockerhub
+docker login
+docker image
+docker tag web-image idndevops/web-image
+docker push idndevops/web-image

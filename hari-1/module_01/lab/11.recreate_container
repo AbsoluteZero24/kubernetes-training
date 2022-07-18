@@ -1,0 +1,17 @@
+- edit apps
+echo "<p>Ini adalah paragraf kedua</p>" >> apps/index.html
+
+- build image
+docker build -t idndevops/web-image:v1 .
+
+- push image to dockerhub
+docker push idndevops/web-image:v1
+
+- remove container
+docker rm -f web-image
+
+- running container
+docker run -d -p 80:80 --name web_custom idndevops/web_image:v1
+
+- cek container
+docker ps

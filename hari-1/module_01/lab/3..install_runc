@@ -1,0 +1,5 @@
+#...step 2 install runc
+
+- installing binaries
+wget https://github.com/opencontainers/runc/releases/download/v1.1.1/runc.amd64
+install -m 755 runc.amd64 /usr/local/sbin/runc

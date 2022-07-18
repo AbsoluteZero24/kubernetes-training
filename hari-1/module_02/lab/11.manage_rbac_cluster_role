@@ -1,0 +1,8 @@
+- create clusterrole
+kubectl create clusterrole client-dev --verb=get,list --resource=pods --namespace dev
+
+- cek clusterrole
+kubectl get clusterrole
+
+- edit clusterrole
+kubectl edit clusterrole client-dev

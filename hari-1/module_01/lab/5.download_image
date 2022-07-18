@@ -1,0 +1,2 @@
+- pull image
+ctr images pull docker.io/library/nginx:latest

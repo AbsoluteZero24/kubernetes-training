@@ -1,0 +1,25 @@
+- initialisasi control-plane
+kubeadm init --apiserver-advertise-address <master_ip>
+
+- create kubeconfig on root user
+vim .bashrc
+#...
+export KUBECONFIG=/etc/kubernetes/admin.conf
+#...
+
+source .bashrc
+
+- create kubeconfig of non-root user
+mkdir -p $HOME/.kube
+sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+sudo chown $(id -u):$(id -g) $HOME/.kube/config
+
+vim .bashrc
+#...
+export KUBECONFIG=$HOME/.kube/config
+#...
+
+source .bashrc
+
+- create new token (opsional)
+kubeadm token create --print-join-command

@@ -1,0 +1,33 @@
+- set hostname
+hostnamectl set-hostname <hostname>
+
+- set hosts
+vim /etc/hosts
+#...
+<ip_address> <hostname> #master
+<ip_address> <hostname> #worker1
+<ip_address> <hostname> #worker2
+#...
+
+- set static ip
+vim /etc/netplan/00-installer-config.yml
+#...
+    ens160:
+      addresses:
+        - <ip address>/<prefix>
+      gateway4: <ip gateway>
+      nameservers:
+        addresses:
+          - <ip dns>
+          - <ip dns>
+      dhcp4: false
+#...
+
+- set date
+timedatectl set-timezone Asia/Jakarta
+
+- update & upgrade 
+apt update && apt upgrade -y
+
+- autoremove
+apt autoremove

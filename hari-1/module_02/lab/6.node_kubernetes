@@ -1,0 +1,15 @@
+- cek node available
+kubectl get node
+
+- cek detail
+kubectl describe node [node]
+
+- pause pods into node
+kubectl drain [node]
+kubectl cordon [node]
+
+- resume pods into node
+kubectl uncordon [node]
+
+- remove node from cluster
+kubectl delete node [node]
