@@ -1,0 +1,14 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: job1
+spec:
+  #ttlSecondsAfterFinished: 100
+  template:
+    spec:
+      containers:
+      - name: ct-job
+        image: busybox
+        command: ['sh', '-c', 'echo "Hello, Kubernetes!" && sleep 60']
+      restartPolicy: Never
+  backoffLimit: 4

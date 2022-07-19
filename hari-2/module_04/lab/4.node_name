@@ -1,0 +1,5 @@
+- Create pod with nodename
+kubectl create –f pod-nodename.yml
+
+- Check pod location node
+kubectl get pod –o wide

@@ -1,0 +1,8 @@
+- check annotation on pod
+kubectl describe pod [pod name]
+
+- add annotation to pod
+kubectl annotate pod [pod name] [key=value]
+
+- edit annotation on pod
+kubectl annotate pod [pod name] [key=value] --overwrite

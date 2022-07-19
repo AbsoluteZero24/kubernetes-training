@@ -1,0 +1,15 @@
+- Rollout history
+kubectl rollout history deployment [deployment name]
+
+- Update deployment
+kubectl apply –f deployment.yml
+
+- Rollout status
+kubectl rollout status deployment [deployment name]
+
+- Add annotation cause 
+kubectl annotate deployments [deployment name] kubernetes.io/change-cause=“[deskripsi]"
+
+- Rollout undo
+kubectl rollout undo deployment [deployment name]
+kubectl rollout undo deployment [deployment name] --to-revision=3

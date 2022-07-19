@@ -1,0 +1,16 @@
+- Create replicationController
+kubectl create –f rs.yml
+
+- Check replicationController
+kubectl get rs
+kubectl get pod
+
+- Get details replicationController
+kubectl describe rs [rs-name]
+
+- Delete pod 
+kubectl delete pod [pod-name]
+
+- Check again
+kubectl get rs
+kubectl get pod

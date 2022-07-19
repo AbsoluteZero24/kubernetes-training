@@ -1,0 +1,8 @@
+- Create label node
+kubectl label nodes [node] [key]:[value]
+
+- Check label node
+kubectl get node –show-labels
+
+- Delete label node
+kubectl label nodes [node] [key]-

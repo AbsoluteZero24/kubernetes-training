@@ -1,0 +1,11 @@
+- Check taints for node
+kubectl describe node master | grep Taints
+kubectl describe node master | grep –I taint
+
+- Add taint for node
+kubectl taint node worker1 [key]=[value]:[effect]
+kubectl taint node worker2 [key]=[value]:[effect]
+
+- Remove taint for node
+kubectl taint node worker1 [key]=[value]:[effect]-
+kubectl taint node worker2 [key]=[value]:[effect]-

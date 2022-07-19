@@ -1,0 +1,5 @@
+- Create pod with nodeSelector
+kubectl create –f pod-nodeselector.yml
+
+- Check pod location node
+kubectl get pod –o wide

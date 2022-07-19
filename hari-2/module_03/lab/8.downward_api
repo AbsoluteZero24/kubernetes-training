@@ -1,0 +1,5 @@
+- create pod
+kubectl create -f pod-downward.yml
+
+- check env on pod
+kubectl exec -it [pod name] -- env

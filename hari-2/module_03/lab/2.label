@@ -1,0 +1,16 @@
+- check label on pod
+kubectl get pod --show-labels
+
+- check label on node
+kubectl get node --show-labels
+
+- filter get pod with label
+kubectl get pod -l [key=value]
+kubectl get pod -l [key]
+kubectl get pod -l [key!=value]
+
+- add label
+kubectl label pod [pod name] [key=value] 
+
+- edit label
+kubectl label pod [pod name] [key=value] --overwrite

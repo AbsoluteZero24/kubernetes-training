@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    test: startup
+  name: app-startup
+spec:
+  containers:
+  - name: app-startup
+    image: nginx
+    ports:
+      - name: startup-port
+        containerPort: 80
+    startupProbe:
+      httpGet:
+        path: /
+        port: startup-port
+      failureThreshold: 30
+      periodSeconds: 10

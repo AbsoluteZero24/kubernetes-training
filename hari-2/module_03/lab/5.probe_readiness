@@ -1,0 +1,14 @@
+- Create pod
+
+kubectl create –f pod-readiness.yml
+
+- Test readiness container on pod
+
+curl http://[pod ip]
+
+kubectl exec –it [pod name] -- rm -rf /usr/share/nginx/html/index.html 
+
+kubectl get pod
+
+- Get describe process on pod
+kubectl describe pod [pod name]

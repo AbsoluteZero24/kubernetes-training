@@ -1,0 +1,21 @@
+- running container via console
+kubectl run [pod name] --image [image]
+
+- check active pod
+kubectl get pod
+
+- get detail pod
+kubectl describe pod [pod name]
+
+- access console pod
+curl http://[pod ip]
+kubectl exec -it [pod name] -- /bin/bash
+
+- remove pod
+kubectl delete pod [pod name]
+
+- create template pod yaml
+kubectl run [pod name] --image [image] --dry-run=client -o yaml > pod-template.yml
+
+- deploy pod from yaml
+kubectl create -f pod-template.yml

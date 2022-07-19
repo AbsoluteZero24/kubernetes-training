@@ -1,0 +1,14 @@
+- Create deployment
+kubectl apply -f deployment.yml
+
+- Check deployment
+kubectl get deployment
+kubectl get rs
+kubectl get pod
+
+- Get details deployment
+kubectl describe deployment [deployment name]
+kubectl get deployment nginx-deployment -o yaml
+
+- Scaling deployment (opsional)
+kubectl scale deployment [deployment name] --replicas 5

@@ -1,0 +1,9 @@
+- Create configmaps
+kubectl create –f configmaps.yml
+
+- Create pod with configmaps
+kubectl create –f pod-configmaps.yml
+
+- Check pod configmaps env variable
+kubectl get pod
+kubectl exec –it [pod name] -- env

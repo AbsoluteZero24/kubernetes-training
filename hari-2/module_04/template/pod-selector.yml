@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-sata
+spec:
+  containers:
+  - image: nginx
+    name: ct-sata
+  nodeSelector:
+    disktype: sata

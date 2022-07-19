@@ -1,0 +1,9 @@
+- Create daemonset
+kubectl create –f ds.yml
+
+- Check daemonset 
+kubectl get ds
+kubectl get pod
+
+- Get detail daemonset
+kubectl describe ds [ds name]

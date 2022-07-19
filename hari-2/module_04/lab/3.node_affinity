@@ -1,0 +1,5 @@
+- Create pod with affinity
+kubectl create –f pod-affinity.yml
+
+- Check pod location node
+kubectl get pod –o wide

@@ -1,0 +1,9 @@
+- Create jobs
+kubectl create –f job.yml
+
+- Check jobs 
+kubectl get job
+kubectl get pod
+
+- Get detail job
+kubectl describe job [job name]

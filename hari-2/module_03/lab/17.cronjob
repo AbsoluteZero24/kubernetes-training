@@ -1,0 +1,10 @@
+- Create cronjob
+kubectl create –f cronjob.yml
+
+- Check cronjob 
+kubectl get cronjob
+kubectl get job
+kubectl get pod
+
+- Get detail cronjob
+kubectl describe cronjob [cronjob name]

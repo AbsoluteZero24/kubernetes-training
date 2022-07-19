@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-deployment
+  labels:
+    app: app-deploy
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: app-deploy
+  template:
+    metadata:
+      labels:
+        app: app-deploy
+    spec:
+      containers:
+      - name: ct-deploy
+        image: httpd
+        ports:
+        - containerPort: 80

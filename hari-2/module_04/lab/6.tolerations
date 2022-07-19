@@ -1,0 +1,5 @@
+- Create pod with toleration
+kubectl create –f pod-toleration.yml
+
+- Check pod location node
+kubectl get pod –o wide
