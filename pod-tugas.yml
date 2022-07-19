@@ -1,0 +1,54 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-tugas
+  labels:
+    apps: dev
+    versi: v1
+  annotations:
+    description: ini adalah tugas pod hari kedua
+spec:
+  containers:
+  - image: idndevops/web-image:v1
+    name: ct-tugas
+    ports:
+      - name: startup-port
+        containerPort: 80
+    livenessProbe:
+      httpGet:
+        path: /check.html
+        port: 80
+      initialDelaySeconds: 5
+      periodSeconds: 10
+      timeoutSeconds: 1
+      successThreshold: 1
+      failureThreshold: 3
+    readinessProbe:
+      httpGet:
+        path: /
+        port: 80
+      initialDelaySeconds: 5
+      periodSeconds: 5
+    startupProbe:
+      httpGet:
+        path: /
+        port: startup-port
+      failureThreshold: 30
+      periodSeconds: 10
+    env:
+      - name: POD_NAME
+        valueFrom:
+          fieldRef:
+            fieldPath: metadata.name
+      - name: POD_NAMESPACE
+        valueFrom:
+          fieldRef:
+            fieldPath: metadata.namespace
+      - name: POD_IP
+        valueFrom:
+          fieldRef:
+            fieldPath: status.podIP
+      - name: POD_NODE_IP
+        valueFrom:
+          fieldRef:
+            fieldPath: status.hostIP
