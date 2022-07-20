@@ -7,9 +7,9 @@ spec:
   - name: ct-nginx
     image: nginx
     imagePullPolicy: IfNotPresent
-    tolerations:
-    - key: "ready"
-      operator: "Equal"
-      value: "no"
-      effect: "NoExecute"
-      tolerationSeconds: 60
+  tolerations:
+  - key: "ready"
+    operator: "Equal"
+    value: "no"
+    effect: "NoExecute"
+    tolerationSeconds: 60
