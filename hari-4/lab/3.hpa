@@ -1,0 +1,15 @@
+- Create deployment
+kubectl apply -f deployment.yml
+
+- Create service
+kubectl apply –f service.yml
+
+- Create hpa
+kubectl apply –f hpa.yml
+
+- Monitoring hpa
+kubectl get hpa php-apache –watch
+
+- Testing hpa
+kubectl run -i --tty load-generator --rm --image=busybox:1.28 --restart=Never -- /bin/sh -c "while sleep 0.01; do wget -q -O- http://php-apache; done"
+

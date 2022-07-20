@@ -1,0 +1,16 @@
+- Create persistent volume
+kubectl apply –f pv.yml
+
+- Create persistent volume claim
+kubectl apply –f pvc.yml
+
+- Create pod with pvc
+kubectl apply –f pod-pv.yml
+
+- Check pod
+kubectl get pod
+kubectl describe pod [pod name]
+
+- Testing volume
+cd [path volume]
+echo "<p>Ini adalah tampilan index html</p>" > index.html

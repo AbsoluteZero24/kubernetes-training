@@ -1,0 +1,14 @@
+- Create pod volume
+kubectl create –f pod-nfs.yml
+
+- Check pod
+kubectl get pod 
+kubectl describe pod [pod name]
+
+- Install nfs utils 
+apt install nfs-common
+mount -t nfs [ip address]:[path volume] [path mount]
+
+- Testing volume
+cd [path volume]
+echo "<p>Ini adalah tampilan index html</p>" > index.html

@@ -1,0 +1,9 @@
+- Create pod limit resource
+kubectl create –f pod-resource.yml
+
+- Check resource pod
+kubectl top pod
+
+- Testing resource
+apt install ab
+ab –n 10000 –c 10 http://[ip address]/

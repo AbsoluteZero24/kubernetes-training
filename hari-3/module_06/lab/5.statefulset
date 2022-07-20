@@ -1,0 +1,17 @@
+- Create pv statefulset
+kubectl apply –f pv-sts.yml
+
+- Create statefulset
+kubectl apply –f statefulset.yml
+
+- Check statefulset
+kubectl get sts
+kubectl describe sts [statefulset name]
+
+- Testing volume
+kubectl get pv,pvc
+cd [path volume]
+echo "<p>Ini adalah tampilan index html</p>" > index.html
+
+- Testing scale
+kubectl scale sts [statefulset name] --replicas 2

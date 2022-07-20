@@ -1,0 +1,10 @@
+- Create pod volume
+kubectl create –f pod-volume.yml
+
+- Check pod 
+kubectl get pod 
+kubectl describe pod [pod name]
+
+- Testing volume
+cd [path volume]
+echo "<p>Ini adalah tampilan index html</p>" > index.html

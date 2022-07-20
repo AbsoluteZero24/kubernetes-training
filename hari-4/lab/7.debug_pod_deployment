@@ -1,0 +1,12 @@
+- Debugging pod
+kubectl get pod
+kubectl describe pod [pod name]
+kubectl logs [pod]
+
+- Debugging replicaset
+kubectl get rs
+kubectl describe rs [rs name]
+
+- Debugging deployment
+kubectl get deployment
+kubectl describe deployment [deployment name]

@@ -1,0 +1,3 @@
+- Debug statefulset
+kubectl get sts
+kubectl describe sts [sts name]

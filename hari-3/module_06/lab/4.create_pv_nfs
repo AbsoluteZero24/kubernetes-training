@@ -1,0 +1,17 @@
+- Create persistent volume
+kubectl apply –f pv-nfs.yml
+
+- Create persistent volume claim
+kubectl apply –f pvc-nfs.yml
+
+- Create pod with pvc
+kubectl apply –f pod-pv-nfs.yml
+
+- Check pod
+kubectl get pod
+kubectl describe pod [pod name]
+
+- Testing volume
+kubectl get pv,pvc
+cd [path volume]
+echo "<p>Ini adalah tampilan index html</p>" > index.html

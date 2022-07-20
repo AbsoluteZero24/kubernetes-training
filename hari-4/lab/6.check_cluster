@@ -1,0 +1,12 @@
+- Check node ready
+kubectl get node
+
+- stop service on worker1
+systemctl stop kubelet
+
+- Check node ready
+kubectl get node
+kubectl describe node worker1
+
+- Start service on worker1
+systemctl start kubelet

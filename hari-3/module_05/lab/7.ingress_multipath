@@ -1,0 +1,9 @@
+- Create ingress
+kubectl apply –f ingress-multi.yml
+
+- Check ingress
+kubectl get ing
+kubectl describe ing [ing name]
+
+- Delete ingress
+kubectl delete ing [ing name]

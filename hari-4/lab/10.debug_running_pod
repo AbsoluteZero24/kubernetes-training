@@ -1,0 +1,6 @@
+- Debugging running pods
+kubectl get pod
+kubectl describe pod [pod name]
+
+- Check logs on pod
+kubectl logs [pod name]

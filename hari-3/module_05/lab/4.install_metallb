@@ -1,0 +1,12 @@
+- Edit kubeproxy
+kubectl edit configmap -n kube-system kube-proxy
+
+- Install manifest
+kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.12.1/manifests/namespace.yaml
+kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.12.1/manifests/metallb.yaml
+
+- Edit file metallb
+vim metallb.yml
+
+- Apply metallb
+kubectl apply -f metallb.yml

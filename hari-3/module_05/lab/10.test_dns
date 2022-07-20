@@ -1,0 +1,15 @@
+- Check coredns
+kubectl get all –n kube-system
+
+- Deploy pod nettool
+kubectl create –f nettool.yml
+
+- Testing service discovery
+kubectl exec –it [pod name] -- /bin/bash
+
+- Deploy pod custom dns
+vim pod-custom.yml
+kubectl create –f pod-custom.yml
+
+- Testing service discovery
+kubectl exec –it [pod name] -- /bin/bash

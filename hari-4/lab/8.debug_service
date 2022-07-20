@@ -1,0 +1,3 @@
+- Debug service
+kubectl get svc
+kubectl describe svc [svc name]

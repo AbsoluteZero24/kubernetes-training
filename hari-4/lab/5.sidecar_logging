@@ -1,0 +1,10 @@
+- Create pod-log
+kubectl create –f pod-log.yml
+
+- Check pod
+kubectl get pod
+kubectl describe pod [pod name]
+
+- Check logs pod multi container
+kubectl logs [pod name] [ct name]
+kubectl logs -f [pod name] [ct name]

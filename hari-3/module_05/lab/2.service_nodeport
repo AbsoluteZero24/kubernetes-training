@@ -1,0 +1,10 @@
+- Create service
+kubectl apply –f service-nodeport.yml
+
+- Check service
+kubectl get svc
+kubectl get endpoints
+kubectl describe svc [svc name]
+
+- Testing service
+curl http://[svc-ip]:[port]

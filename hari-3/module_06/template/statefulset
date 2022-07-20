@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: test-statefulset
+spec:
+  #podManagementPolicy: Parallel
+  selector:
+    matchLabels:
+      app: test-state
+  serviceName: svc-state
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: test-state
+    spec:
+      containers:
+      - name: ct-state
+        image: nginx
+        ports:
+        - containerPort: 80
+        volumeMounts:
+        - name: mounting
+          mountPath: /usr/share/nginx/html
+  volumeClaimTemplates:
+  - metadata:
+      name: mounting
+    spec:
+      storageClassName: manual
+      accessModes: [ "ReadWriteOnce" ]
+      resources:
+        requests:
+          storage: 1Gi
