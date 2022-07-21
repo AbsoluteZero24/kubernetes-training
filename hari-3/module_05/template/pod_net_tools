@@ -5,6 +5,6 @@ metadata:
 spec:
  containers:
  - name: centos
-  image: centos
-  command: [ "sleep" ]
-  args: [ "infinity" ]
+   image: centos
+   command: [ "sleep" ]
+   args: [ "infinity" ]
