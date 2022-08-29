@@ -10,7 +10,7 @@ vim /etc/hosts
 #...
 
 - set static ip
-vim /etc/netplan/00-installer-config.yml
+vim /etc/netplan/00-installer-config.yaml
 #...
     ens160:
       addresses:
