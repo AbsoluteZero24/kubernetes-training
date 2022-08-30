@@ -5,7 +5,7 @@ kubectl create clusterrolebinding client-dev-rolebinding --clusterrole=client-de
 kubectl get clusterrolebinding
 
 - edit clusterrolebinding
-kubectl edit clusterrolebinding client-dev-clusterrolebinding
+kubectl edit clusterrolebinding client-dev-rolebinding
 
 - verifikasi
 kubectl --kubeconfig client.conf get pods
