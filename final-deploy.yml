@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tugas-deployment
+  labels:
+    app: tugas-deploy
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: tugas-deploy
+  template:
+    metadata:
+      labels:
+        app: tugas-deploy
+    spec:
+      volumes:
+      - name: nfs-path
+        persistentVolumeClaim:
+          claimName: pvc-nfs
+      containers:
+      - name: ct-deploy
+        image: idndevops/web-rafi:v1.0
+        ports:
+        - containerPort: 80
+        volumeMounts:
+        - name: nfs-path
+          mountPath: /usr/share/nginx/html
