@@ -5,11 +5,11 @@ metadata:
 spec:
  containers:
  - name: ct-nginx
-  image: nginx
-  resources:
-   requests:
-    memory: 250Mi
-    cpu: 100m
-   limits:
-    memory: 500Mi
-    cpu: 250m
+   image: nginx
+   resources:
+     requests:
+       memory: 250Mi
+       cpu: 100m
+     limits:
+       memory: 500Mi
+       cpu: 250m
