@@ -1,6 +1,6 @@
 - Deploy metrics server
 kubectl apply -f \
-https://github.com/kubernetes-sigs/metrics-server/releases/download/v0.6.1/components.yaml
+https://github.com/kubernetes-sigs/metricsserver/releases/latest/download/components.yaml
 
 - Edit resource metrics server
 kubectl edit deployment.apps/metrics-server -n kube-system

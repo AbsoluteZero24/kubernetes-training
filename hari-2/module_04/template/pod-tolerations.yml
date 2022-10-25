@@ -9,6 +9,6 @@ spec:
     imagePullPolicy: IfNotPresent
   tolerations:
   - key: "ready"
-    operator: "Equal
+    operator: "Equal"
     value: "yes"
     effect: "NoSchedule"
