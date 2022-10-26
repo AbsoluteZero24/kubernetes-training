@@ -1,0 +1,40 @@
+# on master node
+
+- find latest package
+apt update
+apt-cache madison kubeadm
+
+- upgrade kubeadm version control plane
+apt-mark unhold kubeadm && \
+apt-get update && apt-get install -y kubeadm=1.20.15-00 && \
+apt-mark hold kubeadm
+
+- check version
+kubeadm version
+
+- plan upgrade
+kubeadm upgrade plan
+
+- pull image for upgrade
+kubeadm config images pull
+
+- upgrade version
+kubeadm upgrade apply v1.20.15
+
+- drain node
+kubectl drain <master-node> --ignore-daemonsets
+
+- upgrade kubelet & kubectl
+apt-mark unhold kubelet kubectl && \
+apt-get update && apt-get install -y kubelet=1.20.15-00 kubectl=1.20.15-00 && \
+apt-mark hold kubelet kubectl
+
+- restart kubelet
+sudo systemctl daemon-reload
+sudo systemctl restart kubelet
+
+- uncordon node
+kubectl uncordon <master-node>
+
+- verifikasi
+kubectl get node -o wide

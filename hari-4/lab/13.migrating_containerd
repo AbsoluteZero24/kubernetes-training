@@ -2,7 +2,7 @@
 kubectl drain s3-worker2 --ignore-daemonsets #on master node
 
 - stop kubelet
-systemctl stop kubectl #on migration node
+systemctl stop kubelet #on migration node
 systemctl stop docker #on migration node
 
 - remove docker
@@ -12,8 +12,17 @@ apt autoremove #on migration node
 - config containerd
 vim /etc/containerd/config.toml
 
+- start kubelet
+systemctl start containerd
+systemctl status containerd
+
 - config kubeadm
 vim /var/lib/kubelet/kubeadm-flags.env
+
+- config kube node
+kubectl edit no <node-name>
+#edit
+kubeadm.alpha.kubernetes.io/cri-socket: unix:///run/containerd/containerd.sock
 
 - start kubelet
 systemctl start kubelet
@@ -21,3 +30,6 @@ systemctl status kubelet
 
 - verification
 kubectl get node -o wide
+
+- uncordon
+kubectl uncordon <node-name>
