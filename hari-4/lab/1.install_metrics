@@ -3,7 +3,7 @@ kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/late
 
 - Edit resource metrics server
 kubectl edit deployment.apps/metrics-server -n kube-system
-kubectl get pod –n kube-system
+kubectl get pod -n kube-system
 
 - Check resource usage for pod & node
 kubectl top pod
