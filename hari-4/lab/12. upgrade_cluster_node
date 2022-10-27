@@ -7,7 +7,7 @@ apt-mark hold kubeadm
 kubeadm upgrade node
 
 - drain node
-kubectl drain <worker-node> --ignore-daemonsets 
+kubectl drain <worker-node> --ignore-daemonsets #master
 
 - upgrade kubelet & kubectl
 apt-mark unhold kubelet kubectl && \
