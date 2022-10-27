@@ -1,3 +1,8 @@
+- config kube node
+kubectl edit no <node-name>
+#edit
+kubeadm.alpha.kubernetes.io/cri-socket: unix:///run/containerd/containerd.sock
+
 - pause & drain node step by step
 kubectl drain s3-worker2 --ignore-daemonsets #on master node
 
@@ -18,11 +23,6 @@ systemctl status containerd
 
 - config kubeadm
 vim /var/lib/kubelet/kubeadm-flags.env
-
-- config kube node
-kubectl edit no <node-name>
-#edit
-kubeadm.alpha.kubernetes.io/cri-socket: unix:///run/containerd/containerd.sock
 
 - start kubelet
 systemctl start kubelet
