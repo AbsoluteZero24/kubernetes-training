@@ -6,7 +6,6 @@ kubectl edit no <node-name> #on master node
 #edit
 kubeadm.alpha.kubernetes.io/cri-socket: unix:///run/containerd/containerd.sock
 
-
 - stop kubelet
 systemctl stop kubelet #on migration node
 systemctl stop docker #on migration node
@@ -17,6 +16,8 @@ apt autoremove #on migration node
 
 - config containerd
 vim /etc/containerd/config.toml
+#edit
+#disabled_plugins = ["cri"]
 
 - start kubelet
 systemctl start containerd
