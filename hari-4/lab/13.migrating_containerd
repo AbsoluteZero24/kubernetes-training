@@ -25,6 +25,8 @@ systemctl status containerd
 
 - config kubeadm
 vim /var/lib/kubelet/kubeadm-flags.env
+#edit
+KUBELET_KUBEADM_ARGS="--network-plugin=cni --pod-infra-container-image=k8s.gcr.io/pause:3.2 --container-runtime=remote --container-runtime-endpoint=unix:///run/containerd/containerd.sock"
 
 - start kubelet
 systemctl start kubelet
