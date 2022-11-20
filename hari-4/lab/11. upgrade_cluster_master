@@ -19,7 +19,7 @@ kubeadm upgrade plan
 kubeadm config images pull
 
 - upgrade version
-kubeadm upgrade apply v1.20.15
+kubeadm upgrade apply v1.22.15
 
 - drain node
 kubectl drain <master-node> --ignore-daemonsets
