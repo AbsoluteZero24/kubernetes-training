@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: daemon-pv
+  labels:
+    app: daemon-pv
+spec:
+  selector:
+    matchLabels:
+      name: daemon-pv
+  template:
+    metadata:
+      labels:
+        name: daemon-pv
+    spec:
+      volumes:
+      - name: nfs-pv
+        persistentVolumeClaim:
+          claimName: pvc-nfs
+      containers:
+      - name: ct-nginx
+        image: nginx
+        ports:
+          - containerPort: 80
+        volumeMounts:
+        - name: nfs-pv
+          mountPath: /data
