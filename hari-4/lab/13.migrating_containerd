@@ -4,7 +4,7 @@ kubectl drain s3-worker2 --ignore-daemonsets #on master node
 - config kube node
 kubectl edit no <node-name> #on master node
 #edit
-kubeadm.alpha.kubernetes.io/cri-socket: unix:///run/containerd/containerd.sock
+kubeadm.alpha.kubernetes.io/cri-socket: unix://run/containerd/containerd.sock
 
 - stop kubelet
 systemctl stop kubelet #on migration node
