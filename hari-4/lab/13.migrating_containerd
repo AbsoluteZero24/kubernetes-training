@@ -17,14 +17,17 @@ apt autoremove #on migration node
 - install containerd
 apt install containerd #on migration node
 
+- start kubelet
+systemctl start containerd
+systemctl status containerd
+
 - config containerd
 vim /etc/containerd/config.toml
 #edit
 #disabled_plugins = ["cri"]
 
-- start kubelet
-systemctl start containerd
-systemctl status containerd
+- restart kubelet
+systemctl restart containerd
 
 - config kubeadm
 vim /var/lib/kubelet/kubeadm-flags.env
