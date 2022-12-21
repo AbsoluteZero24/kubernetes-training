@@ -14,6 +14,9 @@ systemctl stop docker #on migration node
 apt remove --purge docker-ce docker-ce-cli #on migration node
 apt autoremove #on migration node
 
+- install containerd
+apt install containerd #on migration node
+
 - config containerd
 vim /etc/containerd/config.toml
 #edit
