@@ -19,7 +19,7 @@ sudo systemctl daemon-reload
 sudo systemctl restart kubelet
 
 - uncordon node
-kubectl uncordon <worker-node>
+kubectl uncordon <worker-node> #master
 
 - verifikasi
-kubectl get node
+kubectl get node #master
