@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: vol-hostpath
+  labels:
+    name: vol-hostpath
+spec:
+  selector:
+    matchLabels:
+      name: vol-hostpath
+  template:
+    metadata:
+      labels:
+        name: vol-hostpath
+    spec:
+      volumes:
+      - name: vol-data
+        hostPath:
+          path: /data
+      containers:
+      - name: ct-vol
+        image: nginx
+        ports:
+        - containerPort: 80
+        volumeMounts:
+        - name: vol-data
+          mountPath: /usr/share/nginx/html/assets
