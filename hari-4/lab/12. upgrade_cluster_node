@@ -1,6 +1,6 @@
 - upgrade kubeadm
 apt-mark unhold kubeadm && \
-apt-get update && apt-get install -y kubeadm=1.20.15-00 && \
+apt-get update && apt-get install -y kubeadm=1.22.17-00 && \
 apt-mark hold kubeadm
 
 - upgrade version
@@ -11,7 +11,7 @@ kubectl drain <worker-node> --ignore-daemonsets #master
 
 - upgrade kubelet & kubectl
 apt-mark unhold kubelet kubectl && \
-apt-get update && apt-get install -y kubelet=1.20.15-00 kubectl=1.20.15-00 && \
+apt-get update && apt-get install -y kubelet=1.22.17-00 kubectl=1.22.17-00 && \
 apt-mark hold kubelet kubectl
 
 - restart kubelet
