@@ -2,8 +2,9 @@
 kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.24.5/manifests/tigera-operator.yaml
 curl https://raw.githubusercontent.com/projectcalico/calico/v3.24.5/manifests/custom-resources.yaml -O
 kubectl create -f custom-resources.yaml
-watch kubectl get pods -n kube-system
+
 
 - install calico manifest
 curl https://raw.githubusercontent.com/projectcalico/calico/v3.24.5/manifests/calico.yaml -O
 kubectl apply -f calico.yaml
+watch kubectl get pods -n kube-system
